@@ -21,13 +21,24 @@ To run these animations, you need to have **ManimGL** installed. This is the Ope
 
 To run an animation, use the `manimgl` command followed by the file path and the scene name.
 
-### Example: Cherenkov Polarisation
+### Examples: Cherenkov Polarisation
 
-To run the `CherPol` scene from the `Cherenkov_polarisation.py` file:
+To run the different scenarios from the `Cherenkov_polarisation.py` file:
 
-```bash
-manimgl Air_showers/Cherenkov_polarisation.py CherPol
-```
+1.  **Sublight Speed** (Particle slower than light in medium):
+    ```bash
+    manimgl Air_showers/Cherenkov_polarisation.py sublight
+    ```
+
+2.  **Lightspeed** (Particle at speed of light):
+    ```bash
+    manimgl Air_showers/Cherenkov_polarisation.py lightspeed
+    ```
+
+3.  **Superluminal Speed** (Particle faster than light - Cherenkov radiation):
+    ```bash
+    manimgl Air_showers/Cherenkov_polarisation.py superluminal
+    ```
 
 **Common flags:**
 - `-o`: Write the interaction to a file.

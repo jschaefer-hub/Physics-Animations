@@ -9,19 +9,35 @@ To run these animations, you need to have **ManimGL** installed. This is the Ope
 1.  **Install System Dependencies**:
     Ensure you have `ffmpeg` and local LaTeX installation (if you plan to use text/equations).
 
+
 2.  **Install ManimGL**:
 
     If you are on Linux, first install the dependencies:
     ```bash
-    mamba install -c conda-forge pango cairo pkg-config expat manimpango 
+    mamba create -n manimgl python=3.12
+    ```
+    Then you clone the [original repository](https://github.com/3b1b/manim) and install with 
+
+    ```bash
+    pip install -e .
     ```
 
-    You can install manimgl via pip:
-    ```bash
-    pip install manimgl
-    ```
-    
-    For identifying the correct version and troubleshooting, refer to the [official ManimGL repository](https://github.com/3b1b/manim).
+## Fixing Linux 
+Especially on Linux, it can be that the package `dvisvgm` (commonly delivered with `texlive-dvisvgm`) is too old (current version is 3.6). This is happening specifically on Fedora installations with very old default latex packages.
+
+If you have an older version installed, it is very likely that you will notice errors when using TeX inside of ManimGL.
+
+to fix this please replace your version with the newest one 
+
+```shell
+# Add the repository with the newest version 
+sudo dnf copr enable mgieseki/dvisvgm
+sudo dnf install dvisvgm
+```
+This will replace the old install.
+
+If you setup a custom cache in `/manimlib/default_config.yml` (specified in the `cache` variable), make sure to delete the old cache file in there after updating dvisvgm.
+
 
 ## Usage
 

@@ -10,7 +10,13 @@ To run these animations, you need to have **ManimGL** installed. This is the Ope
     Ensure you have `ffmpeg` and local LaTeX installation (if you plan to use text/equations).
 
 2.  **Install ManimGL**:
-    You can install it via pip:
+
+    If you are on Linux, first install the dependencies:
+    ```bash
+    mamba install -c conda-forge pango cairo pkg-config expat manimpango 
+    ```
+
+    You can install manimgl via pip:
     ```bash
     pip install manimgl
     ```
